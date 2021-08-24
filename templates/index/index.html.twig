@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Startseite
+{% endblock %}
+
+{% block body %}
+	<video id="video" src="{{ asset('video/frontpageVideo.mp4') }}" autoplay loop playsinline muted></video>
+
+	<div id="headline">
+		<h1 class="display-5 text-white">Nils Schmidt</h1>
+		<a class="btn mt-5 btn-light" href="{{ path('about') }}">Mehr über mich erfahren</a>
+	</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+	<style>
+		#headline {
+			display: flex !important;
+            flex-direction: column;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			display: table;
+			align-items: center;
+			justify-content: center;
+			width: 100vw;
+			height: 100vh
+		}
+
+		#video {
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+		}
+        nav{
+            display:none
+        }
+	</style>
+{% endblock %}
