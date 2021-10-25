@@ -13,6 +13,12 @@
     <script src="{{ asset('js/ScrollMagic/timeline-circle.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/timeline-cards-fadein.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/sections-fadein.js') }}"></script>
+    <script src="{{ asset('js/ScrollMagic/footer-fadein.js') }}"></script>
+    <script src="{{ asset('js/own/imprimt-visibility.js') }}"></script>
+    <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
+
+
+
 
 
 {% endblock %}
@@ -223,30 +229,60 @@
         </div>
         </div>
                 <div class="space-mt100"></div>
-        <div class="container " section="5">
+        <div class="container verticalheight" id="chartdiv" section="5" style="height: 20vh">
                 <footer>
                     <div class="space-mt25"></div>
 
-                    <a class="text-white footer-links" href="#">Impressum</a>
-                    <a class="text-white footer-links" href="#">Links</a>
-                    <a class="text-white footer-links" href="#">Kontakt</a>
-
-                    <div class="space-mt50"></div>
+                    <button onclick="ImprimtVisibility()" scroll='[section="5"]' class=" footer-links" href="">Impressum</button>
+                    <button onclick="ContactVisibility()" scroll='[section="5"]' class=" footer-links" href="">Kontakt</button>
+                    <button >Impressum</button>
 
 
+
+
+
+
+                    <div class="space-mt25"></div>
+
+
+                    <div id="contact" style="display: none;">
+                        <div class="space-mt25"></div>
                     {% include 'elements/div.html.twig' %}
                     {% include 'elements/h3.html.twig' with { text: 'Kontaktiere mich!' } %}
 
-                    <div class="space-mt50"></div>
+                        <div class="space-mt50"></div>
 
-                    <form>
-                        <input name="name" type="text" class="input-field" placeholder="Name" />
-                        <input name="email" type="text" class="input-field" placeholder="Email" />
-                        <textarea name="text" class="input-field" placeholder="Kommentar"></textarea>
-                        <input type="submit" value="SUBMIT"/>
+                        <form>
+
+                            <input name="name" type="text" class="input-field" placeholder="Name" />
+                            <input name="email" type="text" class="input-field" placeholder="Email" />
+                            <textarea name="text" class="input-field" placeholder="Kommentar"></textarea>
+                            <input type="submit" value="SUBMIT"/>
                     </form>
+                    </div>
+                    <div id="imprimt" style="display: none;">
+                        <div class="space-mt25"></div>
+
+                        <div class="space-mt50"></div>
+
+
+
+
+
+                        {% include 'elements/div.html.twig' %}
+                        {% include 'elements/h3.html.twig' with { text: 'Impressum!' } %}
+
+                        <div class="space-mt50"></div>
+
+                    </div>
+
               </footer>
         </div>
+
+
+
+
+
     </div>
 {% endblock %}
 
