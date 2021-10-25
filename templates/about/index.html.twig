@@ -6,6 +6,37 @@
 {% block body %}
 
 
+<div class="float-text button">
+	<a href="" class="float">Section2</a>
+</div>
+
+<div class="main" id="section1">
+
+
+
+				<!--Headline-->
+        <h1 class="display-5 text-white headline" id="headline">Nils Schmidt</h1>
+        <a class="btn mt-5 btn-dark" href="{{ path('about') }}">Mehr über mich erfahren</a>
+
+
+	<!--particles.js-->
+
+		<div id="particles-js blur">
+
+			<div class="row gx-5">
+				<div class="col-lg-6 col-lg-offset-3 text-center">
+					<div class="container center-vertically">
+						<script type="text/javascript" src="{{ asset('js/particles.min.js') }}"></script>
+						<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+
+
 	<div class="form-check form-switch">
 		<input class="form-check-input" type="checkbox">
 		<label class="form-check-label" for="flexSwitchCheckDefault">Flashbang</label>
