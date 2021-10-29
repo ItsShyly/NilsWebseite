@@ -8,13 +8,13 @@
     <script src="{{ asset('js/particles-config.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src="{{ asset('js/ScrollMagic/timeline-circle.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/timeline-cards-fadein.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/sections-fadein.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/footer-fadein.js') }}"></script>
-    <script src="{{ asset('js/own/imprimt-visibility.js') }}"></script>
+    <script src="{{ asset('js/own/imprint-visibility.js') }}"></script>
     <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
 
 
@@ -233,10 +233,9 @@
                 <footer>
                     <div class="space-mt25"></div>
 
-                    <button onclick="ImprimtVisibility()" scroll='[section="5"]' class=" footer-links" href="">Impressum</button>
-                    <button onclick="ContactVisibility()" scroll='[section="5"]' class=" footer-links" href="">Kontakt</button>
-                    <button >Impressum</button>
-
+                    <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button" href="">Datenschutz</button>
+                    <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button" href="">Kontakt</button>
+                    <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button" href="">Impressum</button>
 
 
 
@@ -245,22 +244,23 @@
                     <div class="space-mt25"></div>
 
 
-                    <div id="contact" style="display: none;">
+                    <div footer-div="contact" style="display: none;">
                         <div class="space-mt25"></div>
                     {% include 'elements/div.html.twig' %}
                     {% include 'elements/h3.html.twig' with { text: 'Kontaktiere mich!' } %}
 
                         <div class="space-mt50"></div>
 
-                        <form>
+                        <div class="alert alert-sucess" role="alerts">Anfrage gesendet!</div>
+                        <form method="post">
 
-                            <input name="name" type="text" class="input-field" placeholder="Name" />
-                            <input name="email" type="text" class="input-field" placeholder="Email" />
-                            <textarea name="text" class="input-field" placeholder="Kommentar"></textarea>
-                            <input type="submit" value="SUBMIT"/>
+                            <input name="name" type="text" class="input-field" placeholder="Name" required>
+                            <input name="email" type="text" class="input-field" placeholder="E-mail" required>
+                            <textarea name="text" class="input-field" placeholder="Nachricht" required></textarea>
+                            <input type="submit" value="SUBMIT">
                     </form>
                     </div>
-                    <div id="imprimt" style="display: none;">
+                    <div footer-div="imprint" style="display: none;">
                         <div class="space-mt25"></div>
 
                         <div class="space-mt50"></div>
@@ -275,6 +275,7 @@
                         <div class="space-mt50"></div>
 
                     </div>
+                    <div footer-div="dsgvo" style="display: none;"></div>
 
               </footer>
         </div>
