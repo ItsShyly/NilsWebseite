@@ -52,7 +52,13 @@ $(document).on('click', '[footer-link]', function (e) {
 
     if (currentFooterLink.hasClass('active')) {
         currentFooterLink.removeClass('active')
-        $('#chartdiv').css('height', '20vh')
+        $( "#chartdiv" ).animate({
+            height: "20vh"
+        }, 500 );
+
+        $('html, body').animate({
+            scrollTop: $('[section="5"]').offset().top
+        }, 0)
 
         hideDivs()
         target.blur()

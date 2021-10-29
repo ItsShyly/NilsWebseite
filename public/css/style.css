@@ -894,4 +894,16 @@ form {
 }
 
 
+.text-shorten{
+    max-height: 500px;
+    overflow-y:auto;
+    -ms-overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .text-shorten {
+        max-height: 300px; !important;
+    }
+}
+
 /*Ctrl+Alt+Shift+J collect same code*/
