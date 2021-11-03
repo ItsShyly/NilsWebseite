@@ -1,38 +1,3 @@
-// function ImprintVisibility() {
-//     const x = document.getElementById('imprint');
-//     if (x.style.display === 'none') {
-//         x.style.display = 'block';
-//     } else {
-//         x.style.display = 'none';
-//     }
-//
-//
-//     const y = document.getElementById('chartdiv');
-//     if (y.style.height === '20vh') {
-//         y.style.height = '100vh';
-//     } else {
-//         y.style.height = '100vh';
-//     }
-//
-//
-//     const z = document.getElementById('contact');
-//     if (z.style.display === 'block') {
-//         z.style.display = 'none';
-//
-//     }
-//
-//
-//     const v = document.getElementById('imprint');
-//     if (v.style.display === 'none') {
-//         element.classList.add('active');
-//     } else {
-//         element.classList.add('remove');
-//
-//     }
-// }
-//
-//
-
 function hideDivs() {
     $('[footer-div]').each(function (key, value) {
         $(value).hide()
@@ -67,7 +32,7 @@ $(document).on('click', '[footer-link]', function (e) {
     }
 
     removeActive()
-    target.addClass('active')
+    currentFooterLink.addClass('active')
 
     hideDivs()
     $('[footer-div="' + linkTo + '"]').fadeIn()
