@@ -16,6 +16,7 @@
     <script src="{{ asset('js/ScrollMagic/footer-fadein.js') }}"></script>
     <script src="{{ asset('js/own/imprint-visibility.js') }}"></script>
     <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
+    <script src="{{ asset('js/own/floating-buttons.js') }}"></script>
 
 
 
@@ -29,14 +30,25 @@
         {# <i class="float-margin"></i> #}
         {# </a> #}
 
+        <ul class="floating-list">
 
-        <button type="button" scroll='[section="1"]' class="float float-btm-1">1</button>
 
-        <button type="button" scroll='[section="2"]' class="float float-btm-2">2</button>
+            <li>     <button type="button" scroll='[section="1"]' class="button-float float-btm-1" style="display:none;">1</button> </li>
 
-        <button type="button" scroll='[section="3"]' class="float float-btm-3">3</button>
+            <li>    <button type="button" scroll='[section="2"]' class="button-float float-btm-2" style="display:none;">2</button> </li>
 
-        <button type="button" scroll='[section="4"]' class="float float-btm-4">4</button>
+            <li>    <button type="button" scroll='[section="3"]' class="button-float float-btm-3 " style="display:none;">3</button> </li>
+
+            <li>    <button type="button" scroll='[section="4"]' class="box-float button-float float-btm-4" style="display:none;">4</button> </li>
+
+            <li>  <button type="button"  class="button-hide  float-btm-5" >-</button>  </li>
+
+
+
+
+        </ul>
+
+
 
 
 
@@ -234,11 +246,11 @@
         <footer>
             <div class="space-mt25"></div>
 
-            <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button" href="">Datenschutz
+            <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Datenschutz
             </button>
-            <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button" href="">Kontakt
+            <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Kontakt
             </button>
-            <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button" href="">Impressum
+            <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Impressum
             </button>
 
 
