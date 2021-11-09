@@ -213,6 +213,7 @@
     border-width: 1px;
     border-style: solid;
     transition: all 0.4s;
+    z-index: 3
 }
 
 .timeline-card:hover {
@@ -324,16 +325,19 @@ li{
 
 .button-hide {
     position: fixed;
-    right: 5vh;
-    margin-top: 40vh;
+    right: -60px;
+   margin-top: 90vh;
     background-color: #111111;
     color: #FFF;
-    border-color: #6495ED;;
-    border-radius: 100px;
+    border-color: #6495ED;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
     font-size: 15px;
     text-decoration: none;
-    padding: 10px;
     z-index:1000;
+    bottom: 5vh;
+
 }
 
 .bar1, .bar2, .bar3 {
@@ -357,21 +361,27 @@ li{
     width: 100%;
     height: 75px;
 
+
+
+
 }
 
-.modal-btn-footer {
+.modal-btn:hover {
 
-    background-color: transparent;
-    color: #FFF;
+    color: #6495ED;
     border-left: solid 1px transparent;
     border-right: solid 1px transparent;
-    border-top: solid 1px transparent;
-    border-bottom: solid 1px grey;
-    display:block;
-    margin:0 auto;
-    width: 100%;
-    height: 50px;
+    border-top: solid 2px #6495ED !important;
+    border-bottom: solid 2px #6495ED !important;
+    background-color: rgba(100, 149, 237, 0.06);
 
+
+}
+
+
+.modal:hover {
+
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 36px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
 }
 
 .no-border {
@@ -409,7 +419,12 @@ li{
     height: auto;
     opacity: 100%;
 
+}
 
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 90% !important;
+    }
 }
 
 .name {
@@ -959,22 +974,6 @@ form {
     transition: 0.3s ease-in-out;
 
 }
-/*.popup {*/
-/*    margin: 70px auto;*/
-/*    padding: 20px;*/
-/*    background: #fff;*/
-/*    border-radius: 5px;*/
-/*    width: 30%;*/
-/*    position: relative;*/
-
-/*}*/
-
-
-.opacity {
-
-}
-
-
 
 
 

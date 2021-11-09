@@ -15,6 +15,7 @@
     <script src="{{ asset('js/ScrollMagic/timeline-cards-fadein.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/sections-fadein.js') }}"></script>
     <script src="{{ asset('js/ScrollMagic/footer-fadein.js') }}"></script>
+    <script src="{{ asset('js/own/floating-button.js') }}"></script>
     <script src="{{ asset('js/own/imprint-visibility.js') }}"></script>
     <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
     <script src="{{ asset('js/own/modal.js') }}"></script>
@@ -29,7 +30,7 @@
 
 
 
-    <button type="button" class="button-hide"><i class="bi bi-list"></i></button>
+    <button type="button" class="button-hide" id="button-hide"><i class="bi bi-list"></i></button>
 
     <div class="modal opacity" id="popup-modal" style="opacity: 0;">
 
@@ -61,36 +62,6 @@
     <div class="overlay" id="overlay" style="display: none !important; opacity: 0; "></div>
 
 <div class="sections">
-
-
-
-
-
-
-            {# <a href="#section2" class="float"><p class="float-font">Momentan</p> #}
-            {# <i class="float-margin"></i> #}
-            {# </a> #}
-
-               {#        <ul class="floating-list">#}
-
-
-            {#            <li>     <button type="button" scroll='[section="1"]' class="modal-btn float-btm-1" style="display:none;">1</button> </li>#}
-
-             {#            <li>    <button type="button" scroll='[section="2"]' class="modal-btn float-btm-2" style="display:none;">2</button> </li>#}
-
-              {#            <li>    <button type="button" scroll='[section="3"]' class="modal-btn float-btm-3 " style="display:none;">3</button> </li>#}
-
-           {#            <li>    <button type="button" scroll='[section="4"]' class="box-float modal-btn float-btm-4" style="display:none;">4</button> </li>#}
-
-            {#  <li> #} {#    </li>#}
-
-
-
-
-           {#        </ul>#}
-
-
-
 
 
             {# <!--Section 0 / Start Page--> #}
@@ -143,10 +114,9 @@
             <div class="container fade-section" section="2">
                 <div>
 
-
                     <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG" alt=" BSP icon">
 
-                    {% include 'elements/div.html.twig' %}
+                    {% include 'elements/div.html.twig'                                 %}
                     {% include 'elements/h3.html.twig' with { text: 'Fähigkeiten & Kentnisse' } %}
 
                     <div class="space-mt50"></div>
@@ -283,6 +253,10 @@
             </div>
             </div>
             <div class="space-mt100"></div>
+
+    {# <!-- Section 5 / Footer --> #}
+
+
             <div class="container verticalheight" id="chartdiv" section="5" style="height: 20vh">
               <footer>
                 <div class="space-mt25"></div>

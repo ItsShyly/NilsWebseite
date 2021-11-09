@@ -9,7 +9,7 @@ $('.fade-section').each(function() {
 
 
     var scene = new ScrollMagic.Scene({
-        triggerElement: this
+        triggerElement: $('.fade-section')
     })
         .setTween(tween)
         .addTo(controller)
