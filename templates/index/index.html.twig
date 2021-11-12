@@ -20,7 +20,32 @@
     <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
     <script src="{{ asset('js/own/modal.js') }}"></script>
 
+    <script>
+        $(function () { // wait for document ready
+            // init
+            var controller = new ScrollMagic.Controller();
 
+            // define movement of panels
+            var wipeAnimation = new TimelineMax()
+
+                .fromTo('[section="1"]',    1, {x: "200%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+                .fromTo('[section="2"]',    1, {x: "200%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+                .fromTo('[section="3"]',    1, {x: "200%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+
+
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                triggerElement: "#pin",
+                triggerHook: "onLeave",
+                duration: "200%"
+            })
+                .setPin("#pin")
+                .setTween(wipeAnimation)
+                .addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+        });
+    </script>
 
 
 {% endblock %}
@@ -87,10 +112,11 @@
             {# Flashbang</label> #}
 
             {# </div> #}
-
+<div id="pin">
             {# <!-- Section 1 / Über mich  --> #}
             <div id=container class="container fade-section" section="1">
                 <div class="section-box">
+
 
                     <img src="{{ asset('image/aboutme.svg') }}" class="imagesSVG " alt="About me icon">
 
@@ -132,6 +158,9 @@
                     {% include 'elements/div-close.html.twig' %}
                 </div>
             </div>
+
+
+
             {# <!-- Section 3 / Momentan  --> #}
 
 
@@ -151,7 +180,10 @@
                     {% include 'elements/div-close.html.twig' %}
                 </div>
             </div>
+</div>
             {# <!-- Section 4 / Lebenslauf --> #}
+
+
 
 
             <div class="container " section="4">
@@ -589,6 +621,8 @@
 
 
 </div>
+
+
 
 {% endblock %}
 
