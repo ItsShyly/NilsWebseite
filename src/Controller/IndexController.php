@@ -7,6 +7,7 @@ use App\Repository\TextRepository;
 //use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManagerInterface;
 use PhpParser\Builder\Namespace_;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -45,17 +46,25 @@ class IndexController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-             $email = (new Email())
-            ->from('email')
-            ->to('22nils02@gmail.com')
-            ->subject('Test 12345')
-            ->html('<p> Gesendet 12345 </p>');
+             $email = (new TemplatedEmail())
+            ->from('schmidtnils2607@gmail.com')
+            ->to('schmidtnils2607@gmail.com')
+            ->subject('Website Email')
+            ->htmlTemplate('index/email.html.twig');
 
-            $mailer->send($email);
+            try {
+                $mailer->send($email);
+            } catch (TransportExceptionInterface $e) {
+
+                if($_ENV['APP_ENV'] === 'dev'){
+                    throw $e;
+                }
+                throw new \Exception('Yo da gabs n Fehler');
+            }
 
 
 
-       }
+        }
 
 
 
