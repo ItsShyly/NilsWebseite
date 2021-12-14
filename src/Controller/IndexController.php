@@ -35,8 +35,15 @@ class IndexController extends AbstractController
             ->add('email', EmailType::class,[
                 'label'=>'Email Adresse',
             ])
-            ->add('name', TextType::class)
-            ->add('message', TextType::class)
+            ->add('name', TextType::class,[
+                'label'=>'Name',
+            ])
+            ->add('subject', TextType::class,[
+                'label'=>'Betreff',
+            ])
+            ->add('message', TextType::class,[
+                'label'=>'Nachricht',
+            ])
             ->add('submit', SubmitType::class)
             ->getForm();
 
@@ -46,11 +53,18 @@ class IndexController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
+            $contactFormData = $form->getData();
+
              $email = (new TemplatedEmail())
             ->from('schmidtnils2607@gmail.com')
             ->to('schmidtnils2607@gmail.com')
-            ->subject('Website Email')
-            ->htmlTemplate('index/email.html.twig');
+            ->subject('WEBSITE contact formular: '.$contactFormData['subject'],)
+//            ->htmlTemplate('index/email.html.twig');
+            ->text('Absender: '.$contactFormData['email'].\PHP_EOL.
+                     'Name: '.$contactFormData['name'].\PHP_EOL.
+                     \PHP_EOL.
+                     'Message: '.$contactFormData['message'].\PHP_EOL,
+                'text/plain');
 
             try {
                 $mailer->send($email);
