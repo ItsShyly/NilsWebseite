@@ -379,10 +379,10 @@ li{
 }
 
 
-.modal:hover {
+/*.modal:hover {*/
 
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 36px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
-}
+/*    box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 36px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;*/
+/*}*/
 
 .no-border {
 
@@ -392,6 +392,11 @@ li{
 .color-grey {
 
     color: grey;
+}
+
+.font-weight-bold {
+    font-weight: bold !important;
+
 }
 
 .max-width {

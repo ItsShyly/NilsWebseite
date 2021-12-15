@@ -17,6 +17,7 @@ class LebenslaufEintragCrudController extends AbstractCrudController
     {
         $fields = parent::configureFields($pageName);
         $fields[] = UrlField::new('link', 'Link');
+
         return $fields;
     }
 }

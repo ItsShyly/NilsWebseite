@@ -3,7 +3,7 @@
 
 
 anime({
-    delay: 5000,
+    delay: 3000,
     targets: '.button-hide',
     translateX: [-90],
 

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\TextRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,17 +17,14 @@ class Text
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $location;
-
     /**
      * @ORM\Column(type="text")
      */
     private $text;
-
     /**
      * @ORM\Column(type="datetime")
      */
@@ -61,12 +59,12 @@ class Text
         return $this;
     }
 
-    public function getTime(): ?\DateTimeInterface
+    public function getTime(): ?DateTimeInterface
     {
         return $this->time;
     }
 
-    public function setTime(\DateTimeInterface $time): self
+    public function setTime(DateTimeInterface $time): self
     {
         $this->time = $time;
 

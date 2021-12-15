@@ -11,7 +11,6 @@ class TextCrudController extends AbstractCrudController
     {
         return Text::class;
     }
-
     /*
     public function configureFields(string $pageName): iterable
     {

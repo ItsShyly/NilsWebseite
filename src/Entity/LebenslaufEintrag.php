@@ -17,32 +17,26 @@ class LebenslaufEintrag
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="date")
      */
     private $fromDate;
-
     /**
      * @ORM\Column(type="date", nullable=true)
      */
     private $toDate;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
     /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $text;
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $position;
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -110,6 +104,7 @@ class LebenslaufEintrag
     {
         if ($position === null) {
             $this->position = null;
+
             return $this;
         }
 
