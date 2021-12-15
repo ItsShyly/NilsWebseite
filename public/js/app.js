@@ -33,11 +33,17 @@ let show = false
 $(document).on('click', '.praktika-btn', function () {
   if(show){
     show = false
-    $('#lebenslauf-praktika').fadeOut()
+    $('#lebenslauf-praktika').fadeOut(1000)
     $(this).text('Praktika anzeigen')
+    $('html, body').animate({
+      scrollTop: $('[section="4"]').offset().top
+    }, 0)
+
     return
   }
   show = true
-  $('#lebenslauf-praktika').fadeIn()
+  $('#lebenslauf-praktika').fadeIn(1000)
   $(this).text('Praktika ausblenden')
+
+
 })

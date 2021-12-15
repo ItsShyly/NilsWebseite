@@ -168,12 +168,14 @@
                         {% set i = data|length % 2 %}
                         {% if i == 1 %}{% set i = 0 %}{% else %}{% set i = 1 %}{% endif %}
                         {% include 'index/lebenslauf-eintraege.html.twig' with {'data':praktika, 'i':i} %}
-                    </div>
 
+                    </div>
+                    {% include 'elements/div-close.html.twig' %}
                 </div>
             </div>
 
         </div>
+
     </div>
 
     <div>
@@ -184,8 +186,8 @@
 
     <div class="space-mt100"></div>
     <div class="w-50p">
-        {% include 'elements/div-close.html.twig' %}
     </div>
+
 
     {# <!-- Section 5 / Footer --> #}
 
@@ -193,44 +195,50 @@
         <footer>
             <div class="space-mt25"></div>
 
-            <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Datenschutz
-            </button>
             <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Kontakt
             </button>
             <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Impressum
             </button>
+            <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Datenschutz
+            </button>
 
             <div class="space-mt25"></div>
+
 
             <div footer-div="contact" style="display: none;">
                 <div class="space-mt25"></div>
                 {% include 'elements/div.html.twig' %}
                 {% include 'elements/h3.html.twig' with { text: 'Kontaktiere mich!' } %}
-
                 <div class="space-mt50"></div>
-
                 {{ form(form) }}
-
+                {% include 'elements/div-close.html.twig' %}
             </div>
+
+
             <div footer-div="imprint" style="display: none;">
                 <div class="space-mt25"></div>
-
                 <div class="space-mt50"></div>
-
                 {% include 'elements/div.html.twig' %}
                 {% include 'elements/h3.html.twig' with { text: 'Impressum!' } %}
+                <div class="space-mt50"></div>
                 <div class="text-shorten">
                     {% include 'elements/imprint-text.twig' %}
                 </div>
                 <div class="space-mt50"></div>
-
+                {% include 'elements/div-close.html.twig' %}
             </div>
+
+
             <div footer-div="dsgvo" style="display: none;">
+                {% include 'elements/h3.html.twig' with { text: 'Datenschutzerklärung' } %}
+                {% include 'elements/div.html.twig' %}
+
                 <div class="text-shorten">
                     {% include 'elements/dsvgo-text.twig' %}
-
                 </div>
+                {% include 'elements/div-close.html.twig' %}
             </div>
+
         </footer>
     </div>
 

@@ -1005,6 +1005,21 @@ form {
 
 }
 
+.div-close {
+
+    text-align: right !important;
+    right: 0 !important;
+    margin-right: 10px !important
+}
+
+.div-open {
+
+    text-align: left;
+    left: 0;
+    margin-left: 10px
+
+}
+
 
 
 /*Ctrl+Alt+Shift+J collect same code*/

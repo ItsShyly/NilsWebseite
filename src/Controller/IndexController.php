@@ -32,28 +32,32 @@ class IndexController extends AbstractController
 
         $form = $this->createFormBuilder()
                      ->add('email', EmailType::class, [
-                         'label' => 'E-Mail',
+                         'label' => ' ',
                          'attr'  => [
                              'class' => 'input-field',
+                             'placeholder' => 'E-Mail'
                          ],
                      ])
                      ->add('name', TextType::class,
                          [
-                             'label' => 'Name',
+                             'label' => ' ',
                              'attr'  => [
                                  'class' => 'input-field',
+                                 'placeholder' => 'Dein Name'
                              ],
                          ])
                      ->add('subject', TextType::class, [
-                         'label' => 'Betreff',
+                         'label' => ' ',
                          'attr'  => [
                              'class' => 'input-field',
+                             'placeholder' => 'Betreff'
                          ],
                      ])
                      ->add('message', TextareaType::class, [
-                         'label' => 'Nachricht',
+                         'label' => ' ',
                          'attr'  => [
                              'class' => 'input-field',
+                             'placeholder' => 'Deine Nachricht...'
                          ],
                      ])
                      ->add('submit', SubmitType::class, [
