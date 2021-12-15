@@ -6,12 +6,14 @@ use App\Repository\LebenslaufEintragRepository;
 use App\Repository\TextRepository;
 //use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManagerInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use PhpParser\Builder\Namespace_;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,19 +34,17 @@ class IndexController extends AbstractController
 
 
         $form = $this->createFormBuilder()
-            ->add('email', EmailType::class,[
-                'label'=>'Email Adresse',
-            ])
-            ->add('name', TextType::class,[
-                'label'=>'Name',
-            ])
-            ->add('subject', TextType::class,[
-                'label'=>'Betreff',
-            ])
-            ->add('message', TextType::class,[
-                'label'=>'Nachricht',
-            ])
-            ->add('submit', SubmitType::class)
+
+            ->add('email', EmailType::class, array('label'=>'E-Mail', 'attr' => array('class' => 'input-field' )))
+
+            ->add('name', TextType::class, array('label'=>'Name', 'attr' => array('class' => 'input-field' )))
+
+            ->add('subject', TextType::class, array('label'=>'Betreff', 'attr' => array('class' => 'input-field' )))
+
+            ->add('message', TextareaType::class, array('label'=>'Nachricht', 'attr' => array('class' => 'input-field' )))
+
+            ->add('submit', SubmitType::class, array('label'=>'Absenden', 'attr' => array('class' => 'input-field' )))
+
             ->getForm();
 
         $form->handleRequest($request);
