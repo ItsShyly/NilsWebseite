@@ -19,11 +19,6 @@
     <script src="{{ asset('js/own/imprint-visibility.js') }}"></script>
     <script src="{{ asset('js/own/contact-visibility.js') }}"></script>
     <script src="{{ asset('js/own/modal.js') }}"></script>
-
-
-
-
-
 {% endblock %}
 
 {% block body %}
@@ -36,7 +31,6 @@
 
         <div class="btn-group-vertical max-width" role="group">
 
-
             <button type="button" scroll='[section="1"]' class="modal-btn">Über Mich</button>
 
             <button type="button" scroll='[section="2"]' class="modal-btn">Meine Kentnisse</button>
@@ -45,15 +39,11 @@
 
             <button type="button" scroll='[section="4"]' class="modal-btn">Lebenslauf</button>
 
-            <button footer-link="contact" type="button"  class="modal-btn color-grey">Kontakt</button>
+            <button footer-link="contact" type="button" class="modal-btn color-grey">Kontakt</button>
 
-            <button footer-link="imprint" type="button"  class="modal-btn color-grey">Impressum</button>
+            <button footer-link="imprint" type="button" class="modal-btn color-grey">Impressum</button>
 
-            <button footer-link="dsgvo" type="button"   class="modal-btn color-grey no-border">Datenschutz</button>
-
-
-
-
+            <button footer-link="dsgvo" type="button" class="modal-btn color-grey no-border">Datenschutz</button>
 
         </div>
 
@@ -61,257 +51,190 @@
 
     <div class="overlay" id="overlay" style="display: none !important; opacity: 0; "></div>
 
-<div class="sections">
+    <div class="sections">
 
-
-            {# <!--Section 0 / Start Page--> #}
-            <div section="0">
-                <div class="blur-3 vh-100 vw-100">
-                    <div id="particles-js">
-                    </div>
-                </div>
-                <div class="page-headline">
-                    <div>
-                        <typing>
-                            <cursor class="blink"></cursor>
-                        </typing>
-
-
-                    </div>
+        {# <!--Section 0 / Start Page--> #}
+        <div section="0">
+            <div class="blur-3 vh-100 vw-100">
+                <div id="particles-js">
                 </div>
             </div>
-
-
-            {# <div class="form-check form-switch"> #}
-            {# <input class="form-check-input" type="checkbox"> #}
-            {# <label class="form-check-label" for="flexSwitchCheckDefault"> #}
-            {# Flashbang</label> #}
-
-            {# </div> #}
-
-            {# <!-- Section 1 / Über mich  --> #}
-            <div id=container class="container fade-section" section="1">
+            <div class="page-headline">
                 <div>
+                    <typing>
+                        <cursor class="blink"></cursor>
+                    </typing>
 
-                    <img src="{{ asset('image/aboutme.svg') }}" class="imagesSVG " alt="About me icon">
-
-                    {% include 'elements/div.html.twig' %}
-                    {% include 'elements/h1.html.twig' with { text: 'Über mich' } %}
-                    {% include 'elements/p.html.twig' with { text: textAbout } %}
-
-
-                    <div class="space-mt50 center">
-                        <hr class="short-hr">
-                    </div>
-
-                    {% include 'elements/div-close.html.twig' %}
                 </div>
             </div>
+        </div>
 
+        {# <div class="form-check form-switch"> #}
+        {# <input class="form-check-input" type="checkbox"> #}
+        {# <label class="form-check-label" for="flexSwitchCheckDefault"> #}
+        {# Flashbang</label> #}
 
-            {# <!--Section 2 / Fähigkeiten % Kentnisse--> #}
+        {# </div> #}
 
-            <div class="container fade-section" section="2">
-                <div>
+        {# <!-- Section 1 / Über mich  --> #}
+        <div id=container class="container fade-section" section="1">
+            <div>
 
+                <img src="{{ asset('image/aboutme.svg') }}" class="imagesSVG " alt="About me icon">
+
+                {% include 'elements/div.html.twig' %}
+                {% include 'elements/h1.html.twig' with { text: 'Über mich' } %}
+                {% include 'elements/p.html.twig' with { text: textAbout } %}
+
+                <div class="space-mt50 center">
+                    <hr class="short-hr">
+                </div>
+
+                {% include 'elements/div-close.html.twig' %}
+            </div>
+        </div>
+
+        {# <!--Section 2 / Fähigkeiten % Kentnisse--> #}
+
+        <div class="container fade-section" section="2">
+            <div>
+
+                <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG" alt=" BSP icon">
+
+                {% include 'elements/div.html.twig' %}
+                {% include 'elements/h3.html.twig' with { text: 'Fähigkeiten & Kentnisse' } %}
+
+                <div class="space-mt50"></div>
+
+                <div class="ta-center">
+
+                    {% include 'elements/kbox.html.twig' %}
+
+                </div>
+                <div class="space-mt50"></div>
+
+                {% include 'elements/div-close.html.twig' %}
+            </div>
+        </div>
+        {# <!-- Section 3 / Momentan  --> #}
+
+        <div
+                class="container fade-section" section="3">
+
+            <div>
+
+                <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG " alt=" BSP icon">
+
+                {% include 'elements/div.html.twig' %}
+                {% include 'elements/h3.html.twig' with { text: 'Momentan' } %}
+                {% include 'elements/p.html.twig' with { text: textMomentan } %}
+
+                <div class="space-mt100"></div>
+
+                {% include 'elements/div-close.html.twig' %}
+            </div>
+        </div>
+        {# <!-- Section 4 / Lebenslauf --> #}
+
+        <div class="container " section="4">
+            <div class="space-pt35"></div>
+            <div>
+                <div class="fade-section ">
                     <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG" alt=" BSP icon">
 
-                    {% include 'elements/div.html.twig'                                 %}
-                    {% include 'elements/h3.html.twig' with { text: 'Fähigkeiten & Kentnisse' } %}
-
-                    <div class="space-mt50"></div>
-
-                    <div class="ta-center">
-
-
-                        {% include 'elements/kbox.html.twig' %}
-
+                    <div class="w-50p">
+                        {% include 'elements/div.html.twig' %}
 
                     </div>
-                    <div class="space-mt50"></div>
-
-                    {% include 'elements/div-close.html.twig' %}
+                    {% include 'elements/h1.html.twig' with { text: 'Mein Lebenslauf' } %}
+                    {% include 'elements/p.html.twig' with { text: textLebenslauf } %}
                 </div>
-            </div>
-            {# <!-- Section 3 / Momentan  --> #}
+                <div class="space-mt80"></div>
 
+                <div class="py-5">
 
-            <div
-                    class="container fade-section" section="3">
-
-
-                <div>
-
-                    <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG " alt=" BSP icon">
-
-                    {% include 'elements/div.html.twig' %}
-                    {% include 'elements/h3.html.twig' with { text: 'Momentan' } %}
-                    {% include 'elements/p.html.twig' with { text: textMomentan } %}
-
-                    <div class="space-mt100"></div>
-
-                    {% include 'elements/div-close.html.twig' %}
-                </div>
-            </div>
-            {# <!-- Section 4 / Lebenslauf --> #}
-
-
-            <div class="container " section="4">
-                <div class="space-pt35"></div>
-                <div>
-                    <div class="fade-section ">
-                        <img src="{{ asset('image/strengthen.svg') }}" class="imagesSVG" alt=" BSP icon">
-
-                        <div class="w-50p">
-                            {% include 'elements/div.html.twig' %}
-
-                        </div>
-                        {% include 'elements/h1.html.twig' with { text: 'Mein Lebenslauf' } %}
-                        {% include 'elements/p.html.twig' with { text: textLebenslauf } %}
-                    </div>
-                    <div class="space-mt80"></div>
-
-
-                    <div class="row justify-content-center py-5">
-
+                    <div class="row">
                         <div class="center-circle">
                             <div id="trigger1"></div>
                             <div id="pin1">
                                 <div class="circle1"></div>
                             </div>
                         </div>
-                        {% set i = 1 %}
-                        {% for entry in data %}
-                        {% if i == 0 %}
-
-
-
-
-
-                            <div class="col-md-5"></div>
-                            <div class="col-md-1">
-
-                                <div class="v-line">
-                                </div>
-                            </div>
-                        {% endif %}
-
-                        <div class="col-md-5 pb-5">
-                            {% if entry.link != null %}
-                            <a href="{{ entry.link }}" class="text-decoration-none card h-100 lebenslauf-eintrag">
-                                {% else %}
-                                <div class="timeline-card h-100 lebenslauf-eintrag fade-in">
-                                    {% endif %}
-                                    <div class="card-body d-flex flex-column">
-                                        <h4 class=" card-title text-white me-2">{{ entry.title }}</h4>
-                                        <small class=" w-100">{{ entry.position }}</small>
-
-                                        {% if entry.text != null %}
-                                            <p>{{ entry.text }}</p>
-
-                                        {% endif %}
-
-
-                                        <small class="text-muted mt-auto">
-                                            {{ entry.fromDate|format_datetime(pattern="MMMM Y", locale='de') }}
-                                            -
-                                            {% if entry.toDate == null %}
-                                                heute
-                                            {% else %}
-                                                {{ entry.toDate|format_datetime(pattern="MMMM Y", locale='de') }}
-                                            {% endif %}
-                                        </small>
-                                    </div>
-                                    {% if entry.link != null %}
-                            </a>
-                            {% else %}
-                        </div>
-                        {% endif %}
-
-
                     </div>
-                    {% if i == 1 %}
-                        <div class="col-md-1">
-                            <div class="v-line">
-                            </div>
-                        </div>
-                        <div class="col-md-5"></div>
-                    {% endif %}
-
-                    {% if i == 0 %}
-                        {% set i = 1 %}
-                    {% else %}
-                        {% set i = 0 %}
-                    {% endif %}
-                    {% endfor %}
+                    <div class="row justify-content-center" id="lebenslauf">
+                        {% include 'index/lebenslauf-eintraege.html.twig' with {'data':data, 'i':1} %}
+                    </div>
+                    <div class="row justify-content-center" id="lebenslauf-praktika">
+                        {% set i = data|length % 2 %}
+                        {% if i == 1 %}{% set i = 0 %}{% else %}{% set i = 1 %}{% endif %}
+                        {% include 'index/lebenslauf-eintraege.html.twig' with {'data':praktika, 'i':i} %}
+                    </div>
 
                 </div>
+            </div>
 
-                <div class="w-50p">
-                    {% include 'elements/div-close.html.twig' %}
-                </div>
-            </div>
-            </div>
-            <div class="space-mt100"></div>
+        </div>
+    </div>
+
+    <div>
+
+        <button type="button" class="praktika-btn">Praktika anzeigen</button>
+
+    </div>
+
+    <div class="space-mt100"></div>
+    <div class="w-50p">
+        {% include 'elements/div-close.html.twig' %}
+    </div>
 
     {# <!-- Section 5 / Footer --> #}
 
+    <div class="container verticalheight" id="chartdiv" section="5" style="height: 20vh">
+        <footer>
+            <div class="space-mt25"></div>
 
-            <div class="container verticalheight" id="chartdiv" section="5" style="height: 20vh">
-              <footer>
+            <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Datenschutz
+            </button>
+            <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Kontakt
+            </button>
+            <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Impressum
+            </button>
+
+            <div class="space-mt25"></div>
+
+            <div footer-div="contact" style="display: none;">
+                <div class="space-mt25"></div>
+                {% include 'elements/div.html.twig' %}
+                {% include 'elements/h3.html.twig' with { text: 'Kontaktiere mich!' } %}
+
+                <div class="space-mt50"></div>
+
+                {{ form(form) }}
+
+            </div>
+            <div footer-div="imprint" style="display: none;">
                 <div class="space-mt25"></div>
 
-                <button footer-link="dsgvo" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Datenschutz
-                </button>
-                <button footer-link="contact" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Kontakt
-                </button>
-                <button footer-link="imprint" scroll='[section="5"]' class="text-decoration-none button-footer" href="">Impressum
-                </button>
+                <div class="space-mt50"></div>
 
+                {% include 'elements/div.html.twig' %}
+                {% include 'elements/h3.html.twig' with { text: 'Impressum!' } %}
+                <div class="text-shorten">
+                    {% include 'elements/imprint-text.twig' %}
+                </div>
+                <div class="space-mt50"></div>
 
-                <div class="space-mt25"></div>
-
-
-                <div footer-div="contact" style="display: none;">
-                    <div class="space-mt25"></div>
-                    {% include 'elements/div.html.twig' %}
-                    {% include 'elements/h3.html.twig' with { text: 'Kontaktiere mich!' } %}
-
-                    <div class="space-mt50"></div>
-
-
-                    {{ form(form) }}
-
+            </div>
+            <div footer-div="dsgvo" style="display: none;">
+                <div class="text-shorten">
+                    {% include 'elements/dsvgo-text.twig' %}
 
                 </div>
-                 <div footer-div="imprint" style="display: none;">
-                    <div class="space-mt25"></div>
+            </div>
+        </footer>
+    </div>
 
-                    <div class="space-mt50"></div>
-
-
-                    {% include 'elements/div.html.twig' %}
-                    {% include 'elements/h3.html.twig' with { text: 'Impressum!' } %}
-                    <div class="text-shorten">
-                        {% include 'elements/imprint-text.twig' %}
-                    </div>
-                    <div class="space-mt50"></div>
-
-                </div>
-                <div footer-div="dsgvo" style="display: none;">
-                  <div class="text-shorten">
-                      {% include 'elements/dsvgo-text.twig' %}
-
-                  </div>
-                </div>
-            </footer>
-         </div>
-
-
-
-
-
-</div>
+    </div>
 
 {% endblock %}
 

@@ -42,6 +42,11 @@ class LebenslaufEintrag
      */
     private $link;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $praktika;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class LebenslaufEintrag
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getPraktika(): ?bool
+    {
+        return $this->praktika;
+    }
+
+    public function setPraktika(?bool $praktika): self
+    {
+        $this->praktika = $praktika;
 
         return $this;
     }

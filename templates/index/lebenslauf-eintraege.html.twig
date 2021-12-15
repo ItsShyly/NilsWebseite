@@ -1,0 +1,56 @@
+{% for entry in data %}
+    {% if i == 0 %}
+        <div class="col-md-5"></div>
+        <div class="col-md-1">
+
+            <div class="v-line">
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="col-md-5 pb-5">
+    {% if entry.link != null %}
+    <a href="{{ entry.link }}" class="text-decoration-none card h-100 lebenslauf-eintrag">
+        {% else %}
+        <div class="timeline-card h-100 lebenslauf-eintrag fade-in">
+            {% endif %}
+            <div class="card-body d-flex flex-column">
+                <h4 class=" card-title text-white me-2">{{ entry.title }}</h4>
+                <small class=" w-100">{{ entry.position }}</small>
+
+                {% if entry.text != null %}
+                    <p>{{ entry.text }}</p>
+
+                {% endif %}
+
+                <small class="text-muted mt-auto">
+                    {{ entry.fromDate|format_datetime(pattern="MMMM Y", locale='de') }}
+                    -
+                    {% if entry.toDate == null %}
+                        heute
+                    {% else %}
+                        {{ entry.toDate|format_datetime(pattern="MMMM Y", locale='de') }}
+                    {% endif %}
+                </small>
+            </div>
+            {% if entry.link != null %}
+    </a>
+    {% else %}
+    </div>
+    {% endif %}
+    </div>
+
+    {% if i == 1 %}
+        <div class="col-md-1">
+            <div class="v-line">
+            </div>
+        </div>
+        <div class="col-md-5"></div>
+    {% endif %}
+
+    {% if i == 0 %}
+        {% set i = 1 %}
+    {% else %}
+        {% set i = 0 %}
+    {% endif %}
+{% endfor %}

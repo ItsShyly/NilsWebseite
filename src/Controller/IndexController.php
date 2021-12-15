@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Repository\LebenslaufEintragRepository;
 use App\Repository\TextRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,8 +22,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(TextRepository $textRepository, LebenslaufEintragRepository $lebenslaufEintragRepository, Request $request, EntityManagerInterface $entityManager, MailerInterface $mailer): Response
-    {
+    public function index(
+        TextRepository $textRepository,
+        LebenslaufEintragRepository $lebenslaufEintragRepository,
+        Request $request,
+        MailerInterface $mailer
+    ): Response {
 
 
         $form = $this->createFormBuilder()
@@ -98,7 +101,8 @@ class IndexController extends AbstractController
             'textAbout'      => $textRepository->findOneBy(['id' => 1])->getText(),
             'textMomentan'   => $textRepository->findOneBy(['id' => 2])->getText(),
             'textLebenslauf' => $textRepository->findOneBy(['id' => 3])->getText(),
-            'data'           => $lebenslaufEintragRepository->findBy([], ['id' => 'asc']),
+            'data'           => $lebenslaufEintragRepository->findBy(['praktika' => false], ['id' => 'asc']),
+            'praktika'       => $lebenslaufEintragRepository->findBy(['praktika' => true], ['id' => 'asc']),
             'form'           => $form->createView(),
         ]);
     }
